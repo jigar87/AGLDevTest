@@ -6,7 +6,7 @@ This is coding test from AGL based on following specification - http://agl-devel
 A json web service has been set up at the url: http://agl-developer-test.azurewebsites.net/people.json
 
 AGL.Service consumes the json and output a list of all the cats in alphabetical order under a heading of the gender of their owner.
-This application is written in C#.net using third party libraries like Newtonsoft.JSON, NUnit
+This application is written in C#.net using third party libraries like Newtonsoft.JSON, NUnit.
 
 Below is the example of how output should be displayed
 
@@ -28,6 +28,12 @@ Female
 
 Visual Studio 2017
 
+## User Guide
+Clone/Download the source code from git repository and open the solution in visual studio. Once the application is build, it will download all the required dependencies from nuget, including NUnit test adaptor.
+To run the unit test NUnit test adaptor will be required. After the build go to the following menu to run the unit tests,
+
+Test->Windows->Test Explorer
+
 ## AGL.Client
 This is the client application which consumes the service layer. For this test purpose I have used a simple console
 application as client. To run the application, load the solution and press run (F5).
@@ -37,4 +43,4 @@ This is the service layer, I have moved all the business objects and business lo
 we can use this service layer to fulfil such requirement.
 
 ## AGL.Tests
-This is the unit test project and it uses NUnit framework to test the service layer. 
+This is the unit test project and it uses NUnit framework to test the service layer.

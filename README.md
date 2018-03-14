@@ -1,4 +1,9 @@
 # AGL Dev Test
+This is coding test from AGL based on following specification - http://agl-developer-test.azurewebsites.net/
+
+# Prerequisites
+
+Visual Studio 2017
 
 ## AGL.Client
 This is the client application which consumes the service layer. For this test purpose I have used a simple console

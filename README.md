@@ -32,7 +32,10 @@ Visual Studio 2017
 Clone/Download the source code from git repository and open the solution in visual studio. Once the application is build, it will download all the required dependencies from nuget, including NUnit test adaptor.
 To run the unit test NUnit test adaptor will be required. After the build go to the following menu to run the unit tests,
 
-Test->Windows->Test Explorer
+`Test->Windows->Test Explorer`
+
+To run the application, open the solution in visual studio and press start (F5) it should start the AGL.Client console application.
+
 
 ## AGL.Client
 This is the client application which consumes the service layer. For this test purpose I have used a simple console

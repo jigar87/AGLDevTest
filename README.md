@@ -1,7 +1,30 @@
 # AGL Dev Test
 This is coding test from AGL based on following specification - http://agl-developer-test.azurewebsites.net/
 
-# Prerequisites
+## Requirements
+
+A json web service has been set up at the url: http://agl-developer-test.azurewebsites.net/people.json
+
+AGL.Service consumes the json and output a list of all the cats in alphabetical order under a heading of the gender of their owner.
+This application is written in C#.net using third party libraries like Newtonsoft.JSON, NUnit
+
+Below is the example of how output should be displayed
+
+```yml
+Male
+
+   - Angel
+   - Molly
+   - Tigger
+
+Female
+
+   - Gizmo
+   - Jasper
+```
+
+
+## Prerequisites
 
 Visual Studio 2017
 

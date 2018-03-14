@@ -59,7 +59,7 @@ namespace AGL.Tests
             {
                 foreach (var cat in item.CatNames)
                 {
-                    Assert.IsTrue(_displayService.VerifyOwnersGender(url, cat, item.Gender));
+                    Assert.IsTrue(_displayService.VerifyOwnersGender(url, cat, item.OwnersGender));
                 }
 
             }

@@ -9,11 +9,11 @@ namespace AGLDevTest
         static void Main(string[] args)
         {
             var url = ConfigurationManager.AppSettings["APIUrl"];
-            var catList = new DisplayService().GetCatsGroupedByOwnerGender(url);
+            var catList = new DisplayService().GetCatsGroupedByOwnerGender(url);            
 
             foreach (var item in catList)
             {                
-                Console.WriteLine(item.Gender);
+                Console.WriteLine(item.OwnersGender);
                 Console.WriteLine();
                 foreach(var cat in item.CatNames)
                 {

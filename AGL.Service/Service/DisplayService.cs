@@ -37,6 +37,13 @@ namespace AGL.Service.Service
             return ownerList;
         }
 
+        /// <summary>
+        /// Verifies whether the pet owners gender is same as passed in the parameter.
+        /// </summary>
+        /// <param name="apiUrl"></param>
+        /// <param name="petName"></param>
+        /// <param name="ownersGender"></param>
+        /// <returns></returns>
         public bool VerifyOwnersGender(string apiUrl, string petName, string ownersGender)
         {
             var ownerList = GetOwnerAndPetData(apiUrl);
@@ -51,6 +58,12 @@ namespace AGL.Service.Service
         }
         
 
+        /// <summary>
+        /// Fetches the owner and pet data from the API, groups by pet owners gender for pet type Cat
+        /// and within each group orders cat names in ascending order.
+        /// </summary>
+        /// <param name="apiUrl"></param>
+        /// <returns></returns>
         public List<Cats> GetCatsGroupedByOwnerGender(string apiUrl)
         {
             try
@@ -62,7 +75,7 @@ namespace AGL.Service.Service
                              group owner by new { owner.Gender } into grp
                              select new Cats
                              {
-                                 Gender = grp.Key.Gender,
+                                 OwnersGender = grp.Key.Gender,
                                  CatNames = (grp.SelectMany(ow => ow.Pets).Where(p => p.Type == "Cat").
                                             OrderBy(x => x.Name).
                                             Select(y => y.Name)).ToList()

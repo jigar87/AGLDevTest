@@ -11,12 +11,12 @@ namespace AGL.Service.Service
     public class DisplayService
     {
         //HttpClient is intended to be instantiated once for life of an application.
-        private static HttpClient Client = new HttpClient();        
+        private static readonly HttpClient _client = new HttpClient();
         public async Task<string> GetAPIData(string apiUrl)
         {
             try
             {
-                using (var response = await Client.GetAsync(new Uri(apiUrl)))
+                using (var response = await _client.GetAsync(new Uri(apiUrl)))
                 {
                     string result = await response.Content.ReadAsStringAsync();
                     return result;
@@ -56,7 +56,7 @@ namespace AGL.Service.Service
             return petOwnerExists;
 
         }
-        
+
 
         /// <summary>
         /// Fetches the owner and pet data from the API, groups by pet owners gender for pet type Cat
@@ -69,7 +69,6 @@ namespace AGL.Service.Service
             try
             {
                 var ownerList = GetOwnerAndPetData(apiUrl);
-                var obj = ownerList.GroupBy(oc => oc.Gender).ToList();
                 var query = (from owner in ownerList
                              where owner.Pets != null
                              group owner by new { owner.Gender } into grp
@@ -91,5 +90,5 @@ namespace AGL.Service.Service
 
         }
 
-    }    
+    }
 }

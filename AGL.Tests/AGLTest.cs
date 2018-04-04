@@ -13,14 +13,14 @@ namespace AGL.Tests
         [SetUp]
         public void Initialize()
         {
-            _displayService = new DisplayService(); 
-        }       
+            _displayService = new DisplayService();
+        }
 
         [TestCase]
         public void GetAPIData_Connection_Failure()
         {
             var failurl = "http://agl-developer-test.aewebsites.net/people.json";
-            
+
             Assert.ThrowsAsync<HttpRequestException>(() =>  _displayService.GetAPIData(failurl));
         }
 
